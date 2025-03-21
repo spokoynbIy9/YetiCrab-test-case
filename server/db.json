@@ -12,6 +12,7 @@
                 "latitude": 48.8584,
                 "longitude": 2.2945
             },
+            "mapLink": "https://www.google.com/maps?q=48.8584,2.2945",
             "status": "посетил"
         },
         {
@@ -26,6 +27,7 @@
                 "latitude": 40.6892,
                 "longitude": -74.0445
             },
+            "mapLink": "https://www.google.com/maps?q=40.6892,-74.0445",
             "status": "планирую"
         },
         {
@@ -40,6 +42,7 @@
                 "latitude": 40.4319,
                 "longitude": 116.5704
             },
+            "mapLink": "https://www.google.com/maps?q=40.4319,116.5704",
             "status": "посетил"
         }
     ]
