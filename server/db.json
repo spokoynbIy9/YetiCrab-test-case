@@ -1,0 +1,46 @@
+{
+    "attractions": [
+        {
+            "id": 1,
+            "title": "Эйфелева башня",
+            "dateAdded": "2024-03-20",
+            "timeAdded": "12:30",
+            "rating": 5,
+            "photo": "https://example.com/eiffel.jpg",
+            "location": "Париж, Франция",
+            "coordinates": {
+                "latitude": 48.8584,
+                "longitude": 2.2945
+            },
+            "status": "посетил"
+        },
+        {
+            "id": 2,
+            "title": "Статуя Свободы",
+            "dateAdded": "2024-03-18",
+            "timeAdded": "15:45",
+            "rating": 4,
+            "photo": "https://example.com/statue.jpg",
+            "location": "Нью-Йорк, США",
+            "coordinates": {
+                "latitude": 40.6892,
+                "longitude": -74.0445
+            },
+            "status": "планирую"
+        },
+        {
+            "id": 3,
+            "title": "Великая Китайская стена",
+            "dateAdded": "2024-03-15",
+            "timeAdded": "10:10",
+            "rating": 5,
+            "photo": "https://example.com/greatwall.jpg",
+            "location": "Китай",
+            "coordinates": {
+                "latitude": 40.4319,
+                "longitude": 116.5704
+            },
+            "status": "посетил"
+        }
+    ]
+}
