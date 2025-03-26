@@ -1,0 +1,126 @@
+$border-color: #e5e5e5;
+$primary-color: #2d5bff;
+$hover-background: #fafafa;
+$header-background: #f8f9fa;
+$rating-color: #ff9d00;
+$text-dark: #1a1a1a;
+$text-gray: #666;
+
+.table {
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+.tableRow {
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    td {
+      background-color: $hover-background;
+      border-color: rgba(128, 128, 128, 0.9);
+    }
+  }
+
+  td {
+    background: white;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+}
+
+.photoCell {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+
+  img {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 1px solid $border-color;
+  }
+}
+
+.titleCell {
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.ratingCell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: $rating-color;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+}
+
+.visited {
+  color: #2e7d32;
+}
+
+.planned {
+  color: #ef6c00;
+}
+
+.mapLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: black;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $primary-color;
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.actionsCell {
+  button {
+    margin-right: 1rem;
+    border-radius: 50% !important;
+
+    transition: background-color 0.2s linear;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.editButton {
+  transition: color 0.2s;
+
+  &:hover {
+    color: #ffa726;
+  }
+}
+
+.deleteButton {
+  transition: color 0.2s;
+
+  &:hover {
+    color: red;
+  }
+}

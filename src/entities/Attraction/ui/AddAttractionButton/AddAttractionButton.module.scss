@@ -1,0 +1,10 @@
+.addButton {
+  opacity: 0;
+  --g-button-border-radius: 0 0 50% 50%;
+  min-width: 200px;
+  transition: opacity 0.2s linear;
+}
+
+.visible {
+  opacity: 100;
+}

@@ -1,7 +1,7 @@
-import { AttractionList } from '@/entities/Attraction/ui/AttractionList';
+import AttractionsPanel from '@/entities/Attraction/ui/AttractionsPanel/AttractionsPanel';
 
 const AttractionsPage = () => {
-  return <AttractionList />;
+  return <AttractionsPanel />;
 };
 
 export default AttractionsPage;

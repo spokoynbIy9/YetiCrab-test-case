@@ -1,49 +1,79 @@
 {
-    "attractions": [
-        {
-            "id": 1,
-            "title": "Эйфелева башня",
-            "dateAdded": "2024-03-20",
-            "timeAdded": "12:30",
-            "rating": 5,
-            "photo": "https://example.com/eiffel.jpg",
-            "location": "Париж, Франция",
-            "coordinates": {
-                "latitude": 48.8584,
-                "longitude": 2.2945
-            },
-            "mapLink": "https://www.google.com/maps?q=48.8584,2.2945",
-            "status": "посетил"
-        },
-        {
-            "id": 2,
-            "title": "Статуя Свободы",
-            "dateAdded": "2024-03-18",
-            "timeAdded": "15:45",
-            "rating": 4,
-            "photo": "https://example.com/statue.jpg",
-            "location": "Нью-Йорк, США",
-            "coordinates": {
-                "latitude": 40.6892,
-                "longitude": -74.0445
-            },
-            "mapLink": "https://www.google.com/maps?q=40.6892,-74.0445",
-            "status": "планирую"
-        },
-        {
-            "id": 3,
-            "title": "Великая Китайская стена",
-            "dateAdded": "2024-03-15",
-            "timeAdded": "10:10",
-            "rating": 5,
-            "photo": "https://example.com/greatwall.jpg",
-            "location": "Китай",
-            "coordinates": {
-                "latitude": 40.4319,
-                "longitude": 116.5704
-            },
-            "mapLink": "https://www.google.com/maps?q=40.4319,116.5704",
-            "status": "посетил"
-        }
-    ]
+  "attractions": [
+    {
+      "title": "Статуя",
+      "dateAdded": "2024-03-18",
+      "timeAdded": "15:45",
+      "rating": 4,
+      "photo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADIBAMAAACg8cFmAAAAG1BMVEXMzMwAAAB/f39MTEwZGRkzMzOZmZlmZmaysrJ/VoYLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACUElEQVR4nO3Wz4/SQBjG8Vd+tD1SJCxHGlfjkUQxHCFI2COIB49AtHqUZFk9QoKb/bOdGWamZcHbjgf9fhJ4Sd9h++x0OkUEAAAAAAAAAAAAAAAAAAAAAAAAAP5VL0atD7rGH1vvyvV82OCkvR2Nl+FSraav8s1MJHl/t55/L+r5sPW8W2ofpvnLq3CxcvVKxiK1TyKVZlEfWatX3C61JzuRrBsul5aJbNRp5G1RLxkX7bijanUYNtZqJ1Nd911fL7kV367pC5mcz+qTyiRq61rvuarf703vWzmWb6+W+sMibKyFVBq6xkNXTVh96qi0rm/9MH3ZzYGQft1IPNMfKg1Xzdn11KxKd+XCD5OtOZCFyxStt2rBVM35oo6rprVZnkyWuoK+3TdH1JoMpZamP1Wsno3VK8VS01WerPrMD5M3oWOppb3p2UUederlWLLJyztmtvPD7GIPGkuSyeWLKHFamqyoKX/xIpo/v7Tna7hqk6TLYtCh52M1XKygqdTmeNwS4qGrNu6Pth+jn1Di28etIewGoWIdL1t15qo5rG5DdTNaB33Mt4+Xrx821rOuNI/xfNXUbRi76TKTJb6tviH2URSO+t/N0zkrqtgN3k3XZ3MP+rZ5Slc6wRLpAOpOlL3+rXVVVLEbvJ0ut626thmyP/9d9lT6ryW5vlHnfb6T61lRla/m/c68Z4MHpdReDaQyCZZK4nkrNUvkSzo6qafmqbYr2tG81Qo3WUpuf7rcP6p/4NpJvguXCQAAAAAAAAAAAAAAAAAAAAAAAMB/5jdIsGS+sHZ9MAAAAABJRU5ErkJggg==",
+      "location": "Нью-Йорк, США",
+      "coordinates": {
+        "latitude": 40.6892,
+        "longitude": -74.0445
+      },
+      "mapLink": "https://www.google.com/maps?q=40.6892,-74.0445",
+      "status": "планирую",
+      "id": "2"
+    },
+    {
+      "title": "Великая Китайская стена",
+      "dateAdded": "2024-03-15",
+      "timeAdded": "10:10",
+      "rating": 5,
+      "photo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADIBAMAAACg8cFmAAAAG1BMVEXMzMwAAAB/f39MTEwZGRkzMzOZmZlmZmaysrJ/VoYLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACUElEQVR4nO3Wz4/SQBjG8Vd+tD1SJCxHGlfjkUQxHCFI2COIB49AtHqUZFk9QoKb/bOdGWamZcHbjgf9fhJ4Sd9h++x0OkUEAAAAAAAAAAAAAAAAAAAAAAAAAP5VL0atD7rGH1vvyvV82OCkvR2Nl+FSraav8s1MJHl/t55/L+r5sPW8W2ofpvnLq3CxcvVKxiK1TyKVZlEfWatX3C61JzuRrBsul5aJbNRp5G1RLxkX7bijanUYNtZqJ1Nd911fL7kV367pC5mcz+qTyiRq61rvuarf703vWzmWb6+W+sMibKyFVBq6xkNXTVh96qi0rm/9MH3ZzYGQft1IPNMfKg1Xzdn11KxKd+XCD5OtOZCFyxStt2rBVM35oo6rprVZnkyWuoK+3TdH1JoMpZamP1Wsno3VK8VS01WerPrMD5M3oWOppb3p2UUederlWLLJyztmtvPD7GIPGkuSyeWLKHFamqyoKX/xIpo/v7Tna7hqk6TLYtCh52M1XKygqdTmeNwS4qGrNu6Pth+jn1Di28etIewGoWIdL1t15qo5rG5DdTNaB33Mt4+Xrx821rOuNI/xfNXUbRi76TKTJb6tviH2URSO+t/N0zkrqtgN3k3XZ3MP+rZ5Slc6wRLpAOpOlL3+rXVVVLEbvJ0ut626thmyP/9d9lT6ryW5vlHnfb6T61lRla/m/c68Z4MHpdReDaQyCZZK4nkrNUvkSzo6qafmqbYr2tG81Qo3WUpuf7rcP6p/4NpJvguXCQAAAAAAAAAAAAAAAAAAAAAAAMB/5jdIsGS+sHZ9MAAAAABJRU5ErkJggg==",
+      "location": "Китай",
+      "coordinates": {
+        "latitude": "49.4319",
+        "longitude": 116.5704
+      },
+      "mapLink": "https://www.google.com/maps?q=49.4319,116.5704",
+      "status": "посетил",
+      "id": "3"
+    },
+    {
+      "title": "ДАДА",
+      "dateAdded": "2024-03-15",
+      "timeAdded": "10:10",
+      "rating": "4.7",
+      "photo": "https://fakeimg.deblan.org/200x200",
+      "location": "Китай",
+      "coordinates": {
+        "latitude": 40.4319,
+        "longitude": 116.5704
+      },
+      "mapLink": "https://www.google.com/maps?q=40.4319,116.5704",
+      "status": "посетил",
+      "id": "4"
+    },
+    {
+      "id": "8218f8db-3b48-4d5a-998a-e010f2e81cec",
+      "title": "Новое",
+      "location": "Нью-Йорк, США",
+      "rating": 0,
+      "coordinates": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "status": "планирую",
+      "photo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAEsBAMAAAB01OGNAAAAG1BMVEXMzMwAAAB/f39MTEwZGRmysrKZmZlmZmYzMzNjTEbvAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACRElEQVR4nO3Vz4/SQBjG8VegLUeKwF5pXI1HEsVwXLJu4AgJEo+UuNUjJLpyBNH/25lpOx1+xLQxXsz3kyzPhnfatzOdFhEAAAAAAAAAAAAAAAAAAAAAAAAAAP57L8adoc7gZ+edm5fDfpyUd+P7Vdke8eTV+tAX8d4/rQ+bIi+HJdu9U15Mktc3ZZus9dX1RBq/RGrtIs8k6s+7d8rTmUjUL9tFU0dv1UHytshroqIcdFXW76o0+Soy0Tnv27wmntlyQy+ZdznjPzbxezqbgzz159LUHothkR0m8Ur/c6zWpNbSGdzlac6pT+Q7d/doh+mVM8dVcJRgr7PWytOcS192XOy0jw92mOzMN1GFHmoR6uZov5un+X67Kibir3fqftjyyHwZz8o3ae6lPsiaDJwmaip2Io0w/CZ2mLyp3CSaZbfa7zbdJrJNnDuy3A7ssOyWV2jit+X6ckkQus++N/2L5VoMbJNWnln7cOUOjFe2nDUp3UO/LbJNG9zlmZ31e88d2djYcrp5y2/hhb66dIHq+zxNRW0ttcHcJracLtSobA8zEZF2ehabZiKb9FnJPevbsvpXsndRGZ/MhknfiWqb5SnZw+5OJS7K5t1Y65bskT9tc/1bclOkZA97NhXdVe0uWzZD5pe/O9dFww+KavZ8Jrf7IpXP5vPJfI5einf74JTjodSmJXvIIdTUhX4Jx2aJ8zwVHDrhSdk/dDplJ+JYPp7mmeSs7CUV3ikAAAAAAAAAAAAAAAAAAAAAAAAAAPwrvwGZKWQNGolC8wAAAABJRU5ErkJggg==",
+      "dateAdded": "2025-03-25",
+      "timeAdded": "22:38:15",
+      "mapLink": "https://www.google.com/maps?q=0,0"
+    },
+    {
+      "id": "24d7f5d8-5404-4426-aa1a-1ad17907e0e2",
+      "title": "Ещё одно",
+      "location": "Китай",
+      "rating": 0,
+      "coordinates": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "status": "планирую",
+      "photo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAEsBAMAAAB01OGNAAAAG1BMVEXMzMwAAAB/f39MTEwZGRmysrKZmZlmZmYzMzNjTEbvAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACRElEQVR4nO3Vz4/SQBjG8VegLUeKwF5pXI1HEsVwXLJu4AgJEo+UuNUjJLpyBNH/25lpOx1+xLQxXsz3kyzPhnfatzOdFhEAAAAAAAAAAAAAAAAAAAAAAAAAAP57L8adoc7gZ+edm5fDfpyUd+P7Vdke8eTV+tAX8d4/rQ+bIi+HJdu9U15Mktc3ZZus9dX1RBq/RGrtIs8k6s+7d8rTmUjUL9tFU0dv1UHytshroqIcdFXW76o0+Soy0Tnv27wmntlyQy+ZdznjPzbxezqbgzz159LUHothkR0m8Ur/c6zWpNbSGdzlac6pT+Q7d/doh+mVM8dVcJRgr7PWytOcS192XOy0jw92mOzMN1GFHmoR6uZov5un+X67Kibir3fqftjyyHwZz8o3ae6lPsiaDJwmaip2Io0w/CZ2mLyp3CSaZbfa7zbdJrJNnDuy3A7ssOyWV2jit+X6ckkQus++N/2L5VoMbJNWnln7cOUOjFe2nDUp3UO/LbJNG9zlmZ31e88d2djYcrp5y2/hhb66dIHq+zxNRW0ttcHcJracLtSobA8zEZF2ehabZiKb9FnJPevbsvpXsndRGZ/MhknfiWqb5SnZw+5OJS7K5t1Y65bskT9tc/1bclOkZA97NhXdVe0uWzZD5pe/O9dFww+KavZ8Jrf7IpXP5vPJfI5einf74JTjodSmJXvIIdTUhX4Jx2aJ8zwVHDrhSdk/dDplJ+JYPp7mmeSs7CUV3ikAAAAAAAAAAAAAAAAAAAAAAAAAAPwrvwGZKWQNGolC8wAAAABJRU5ErkJggg==",
+      "dateAdded": "2025-03-25",
+      "timeAdded": "22:39:59",
+      "mapLink": "https://www.google.com/maps?q=0,0"
+    }
+  ]
 }
