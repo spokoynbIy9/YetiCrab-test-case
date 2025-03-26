@@ -9,10 +9,6 @@ import { AttractionEditFormSchema } from '../../model/types/attractionEditFormSc
 import { makeMapLink } from '@/shared/libs/helpers/makeMapLink';
 import { ImageUpload } from '../ImageUpload/ImageUpload';
 
-// todo:
-// убрать inlint-style
-// сделать обработку ошибок
-
 interface AttractionEditModalProps {
   open: boolean;
   close: () => void;

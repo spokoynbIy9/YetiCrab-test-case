@@ -1,0 +1,45 @@
+.inputImage {
+  display: none;
+}
+
+.addButton {
+  font-weight: 600;
+  width: 100%;
+}
+
+.containerError {
+  color: var(--g-color-text-danger);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.containerPreview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 4px;
+}
+
+.imagePreview {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5;
+  cursor: pointer;
+}
+
+.containerIncreasedImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.increasedImage {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+}

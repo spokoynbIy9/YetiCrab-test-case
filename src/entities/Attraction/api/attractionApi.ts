@@ -4,9 +4,16 @@ import { Attraction } from '../model/types/attraction';
 
 const attractionApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
-    getAttractions: build.query<AttractionDto[], void>({
-      query: () => ({
+    getAttractions: build.query<
+      AttractionDto[],
+      { search?: string; hideVisited?: boolean }
+    >({
+      query: ({ search, hideVisited }) => ({
         url: '/attractions',
+        params: {
+          title_like: search || undefined,
+          ...(hideVisited && { status_ne: 'посетил' }),
+        },
       }),
       providesTags: ['Attractions'],
     }),

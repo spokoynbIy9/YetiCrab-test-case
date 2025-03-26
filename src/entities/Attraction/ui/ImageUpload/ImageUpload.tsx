@@ -5,9 +5,7 @@ import { fileToBase64 } from '@/shared/libs/helpers/filtToBase64';
 import { Button, Icon, Modal } from '@gravity-ui/uikit';
 import { CircleXmark, Picture } from '@gravity-ui/icons';
 import { goalOfImageUpload } from '@/shared/libs/const/goalOfImageUpload';
-
-// todo
-// убрать inline-style
+import classes from './ImageUpload.module.scss';
 
 interface ImageUploadProps {
   control: Control<AttractionEditFormSchema, unknown>;
@@ -53,51 +51,29 @@ export const ImageUpload: FC<ImageUploadProps> = ({
                 field.onChange(base64);
               }
             }}
-            style={{ display: 'none' }}
+            className={classes.inputImage}
             ref={fileInputRef}
           />
           <Button
-            style={{ fontWeight: 600, width: '100%' }}
             onClick={handleButtonImgClick}
             view="outlined"
             size="l"
+            className={classes.addButton}
           >
             Прикрепите фото
             <Icon data={Picture} size={16} />
           </Button>
           {error && (
-            <div
-              style={{
-                color: 'var(--g-color-text-danger)',
-                fontSize: 13,
-                display: 'flex',
-                alignItems: 'center',
-                marginTop: 2,
-              }}
-            >
+            <div className={classes.containerError}>
               <span>{error.message}</span>
             </div>
           )}
           {uploadImage && (
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginTop: 20,
-                gap: 4,
-              }}
-            >
+            <div className={classes.containerPreview}>
               <img
                 src={uploadImage}
                 alt="Выбранное фото"
-                style={{
-                  width: 50,
-                  height: 50,
-                  objectFit: 'cover',
-                  borderRadius: 5,
-                  cursor: 'pointer',
-                }}
+                className={classes.imagePreview}
                 onClick={() => setIncreaseImage(true)}
               />
               <Button
@@ -114,22 +90,11 @@ export const ImageUpload: FC<ImageUploadProps> = ({
                 <Icon data={CircleXmark} size={16} />
               </Button>
               <Modal open={increaseImage} onOpenChange={closeIncreaseImage}>
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: 20,
-                  }}
-                >
+                <div className={classes.containerIncreasedImg}>
                   <img
                     src={uploadImage}
                     alt="Увеличенное фото"
-                    style={{
-                      maxWidth: '90vw',
-                      maxHeight: '90vh',
-                      borderRadius: 10,
-                    }}
+                    className={classes.increasedImage}
                   />
                 </div>
               </Modal>

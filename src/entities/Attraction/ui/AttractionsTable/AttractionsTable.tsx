@@ -5,6 +5,7 @@ import {
   Link,
   Table,
   TableColumnConfig,
+  withTableSorting,
 } from '@gravity-ui/uikit';
 
 import classes from './AttractionsTable.module.scss';
@@ -28,6 +29,7 @@ export const AttractionsTable: FC<AttractionsTableProps> = ({
   attractions,
   onEdit,
 }) => {
+  const EnhancedTable = withTableSorting<AttractionDto>(Table);
   const [deleteAttraction] = useDeleteAttractionMutation();
 
   const columns: TableColumnConfig<AttractionDto>[] = [
@@ -65,6 +67,7 @@ export const AttractionsTable: FC<AttractionsTableProps> = ({
           <span>{item.rating}</span>
         </div>
       ),
+      meta: { sort: true },
     },
     {
       id: 'status',
@@ -114,11 +117,8 @@ export const AttractionsTable: FC<AttractionsTableProps> = ({
     },
   ];
 
-  // todo
-  // убрать inline-style
-
   return (
-    <Table
+    <EnhancedTable
       data={attractions}
       columns={columns}
       edgePadding={true}
