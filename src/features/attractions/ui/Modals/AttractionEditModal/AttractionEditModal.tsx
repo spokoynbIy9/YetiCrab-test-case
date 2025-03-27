@@ -7,7 +7,7 @@ import classes from './AttractionEditModal.module.scss';
 import { useUpdateAttractionMutation } from '../../../../../entities/Attraction/api/attractionApi';
 import { AttractionEditFormSchema } from '../../../../../entities/Attraction/model/types/attractionEditFormSchema';
 import { makeMapLink } from '@/shared/libs/helpers/makeMapLink';
-import { ImageUpload } from '../../../../../entities/Attraction/ui/ImageUpload/ImageUpload';
+import { ImageUpload } from '@/entities/Attraction';
 
 interface AttractionEditModalProps {
   open: boolean;

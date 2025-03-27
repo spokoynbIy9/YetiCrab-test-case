@@ -1,13 +1,5 @@
-$border-color: #e5e5e5;
-$primary-color: #2d5bff;
-$hover-background: #fafafa;
-$header-background: #f8f9fa;
-$rating-color: #ff9d00;
-$text-dark: #1a1a1a;
-$text-gray: #666;
-
 .table {
-  border: 1px solid $border-color;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -19,7 +11,7 @@ $text-gray: #666;
 
   &:hover {
     td {
-      background-color: $hover-background;
+      background-color: var(--hover-background);
       border-color: rgba(128, 128, 128, 0.9);
     }
   }
@@ -41,7 +33,7 @@ $text-gray: #666;
     height: 56px;
     border-radius: 4px;
     object-fit: cover;
-    border: 1px solid $border-color;
+    border: 1px solid var(--border-color);
   }
 }
 
@@ -54,7 +46,7 @@ $text-gray: #666;
   display: flex;
   align-items: center;
   gap: 6px;
-  color: $rating-color;
+  color: var(--rating-color);
 
   svg {
     width: 16px;
@@ -79,7 +71,7 @@ $text-gray: #666;
   transition: color 0.2s;
 
   &:hover {
-    color: $primary-color;
+    color: var(--primary-color);
   }
 
   svg {
@@ -92,8 +84,6 @@ $text-gray: #666;
   button {
     margin-right: 1rem;
     border-radius: 50% !important;
-
-    transition: background-color 0.2s linear;
 
     &:last-child {
       margin: 0;
@@ -111,16 +101,12 @@ $text-gray: #666;
 }
 
 .editButton {
-  transition: color 0.2s;
-
   &:hover {
     color: #ffa726;
   }
 }
 
 .deleteButton {
-  transition: color 0.2s;
-
   &:hover {
     color: red;
   }

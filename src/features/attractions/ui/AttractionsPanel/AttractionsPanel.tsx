@@ -1,14 +1,14 @@
 import { useCallback, useState } from 'react';
 import { useGetAttractionsQuery } from '../../../../entities/Attraction/api/attractionApi';
 import { AttractionEditModal } from '../Modals/AttractionEditModal/AttractionEditModal';
-import { AttractionsTable } from '../../../../entities/Attraction/ui/AttractionsTable/AttractionsTable';
 import classes from './AttractionsPanel.module.scss';
 import { AttractionDto } from '../../../../entities/Attraction/model/types/attractionDto';
 import { AttractionCreateModal } from '../Modals/AttractionCreateModal/AttractionCreateModal';
 import { AddAttractionButton } from '../AddAttractionButton/AddAttractionButton';
 import { FiltersPanel } from '@/features/attractions/ui/FiltersPanel/FiltersPanel';
+import { AttractionsTable } from '@/entities/Attraction';
 
-const AttractionsPanel = () => {
+export const AttractionsPanel = () => {
   const [editingAttraction, setEditingAttraction] =
     useState<AttractionDto | null>(null);
 
@@ -94,5 +94,3 @@ const AttractionsPanel = () => {
     );
   }
 };
-
-export default AttractionsPanel;

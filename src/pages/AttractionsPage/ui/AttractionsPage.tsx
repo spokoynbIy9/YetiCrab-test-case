@@ -1,4 +1,4 @@
-import AttractionsPanel from '@/features/attractions/ui/AttractionsPanel/AttractionsPanel';
+import { AttractionsPanel } from '@/features/attractions';
 import classes from './AttractionPage.module.scss';
 
 const AttractionsPage = () => {

@@ -3,11 +3,11 @@ import { FC, useCallback, useState } from 'react';
 import classes from './AttractionCreateModal.module.scss';
 import { Controller, useForm } from 'react-hook-form';
 import { AttractionEditFormSchema } from '../../../../../entities/Attraction/model/types/attractionEditFormSchema';
-import { ImageUpload } from '../../../../../entities/Attraction/ui/ImageUpload/ImageUpload';
 import { Status } from '@/shared/libs/types/status';
 import { useCreateAttractionMutation } from '../../../../../entities/Attraction/api/attractionApi';
 import { makeMapLink } from '@/shared/libs/helpers/makeMapLink';
 import { goalOfImageUpload } from '@/shared/libs/const/goalOfImageUpload';
+import { ImageUpload } from '@/entities/Attraction';
 
 interface AttractionCreateModalProps {
   open: boolean;
