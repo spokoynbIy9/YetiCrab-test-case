@@ -1,3 +1,9 @@
 .container {
   padding: 20px 0;
+  width: 1400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  min-height: calc(100vh - 40px);
 }

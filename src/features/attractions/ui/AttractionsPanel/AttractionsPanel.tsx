@@ -22,7 +22,7 @@ export const AttractionsPanel = () => {
     hideVisited: false,
   });
 
-  const { data, isLoading } = useGetAttractionsQuery(filters);
+  const { data, isLoading, isError, error } = useGetAttractionsQuery(filters);
 
   const onEditAttraction = useCallback((attraction: AttractionDto) => {
     setEditingAttraction(attraction);
@@ -55,16 +55,20 @@ export const AttractionsPanel = () => {
     if (!openEditModal && !openCreateModal) setIsHovered(false);
   }, [openCreateModal, openEditModal]);
 
-  if (isLoading) {
+  if (isError) {
     return (
-      <div className={classes.container}>
-        <p className={classes.loading}>Loading...</p>
-      </div>
+      <p className={classes.error}>
+        {error instanceof Error ? error.message : 'Не удалось загрузить данные'}
+      </p>
     );
+  }
+
+  if (isLoading) {
+    return <p className={classes.loading}>Loading...</p>;
   }
   if (data) {
     return (
-      <div className={classes.container}>
+      <>
         <FiltersPanel
           hideVisited={filters.hideVisited}
           toggleHideVisited={toggleHideVisited}
@@ -90,7 +94,7 @@ export const AttractionsPanel = () => {
             close={closeCreateModal}
           />
         </div>
-      </div>
+      </>
     );
   }
 };
