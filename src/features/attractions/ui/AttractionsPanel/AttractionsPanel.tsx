@@ -1,11 +1,11 @@
 import { useCallback, useState } from 'react';
 import { useGetAttractionsQuery } from '../../../../entities/Attraction/api/attractionApi';
-import { AttractionEditModal } from '../../../../entities/Attraction/ui/AttractionEditModal/AttractionEditModal';
+import { AttractionEditModal } from '../Modals/AttractionEditModal/AttractionEditModal';
 import { AttractionsTable } from '../../../../entities/Attraction/ui/AttractionsTable/AttractionsTable';
 import classes from './AttractionsPanel.module.scss';
 import { AttractionDto } from '../../../../entities/Attraction/model/types/attractionDto';
-import { AttractionCreateModal } from '../../../../entities/Attraction/ui/AttractionCreateModal/AttractionCreateModal';
-import { AddAttractionButton } from '../../../../entities/Attraction/ui/AddAttractionButton/AddAttractionButton';
+import { AttractionCreateModal } from '../Modals/AttractionCreateModal/AttractionCreateModal';
+import { AddAttractionButton } from '../AddAttractionButton/AddAttractionButton';
 import { FiltersPanel } from '@/features/attractions/ui/FiltersPanel/FiltersPanel';
 
 const AttractionsPanel = () => {
@@ -24,15 +24,17 @@ const AttractionsPanel = () => {
 
   const { data, isLoading } = useGetAttractionsQuery(filters);
 
-  const onEditAttraction = (attraction: AttractionDto) => {
+  const onEditAttraction = useCallback((attraction: AttractionDto) => {
     setEditingAttraction(attraction);
     setOpenEditModal(true);
-  };
+  }, []);
+
   const closeEditModal = () => setOpenEditModal(false);
 
-  const onCreateAttraction = () => {
+  const onCreateAttraction = useCallback(() => {
     setOpenCreateModal(true);
-  };
+  }, []);
+
   const closeCreateModal = () => {
     setOpenCreateModal(false);
   };
@@ -45,19 +47,18 @@ const AttractionsPanel = () => {
     setFilters((prev) => ({ ...prev, hideVisited: !prev.hideVisited }));
   }, []);
 
-  const onMouseEnterTable = () => {
+  const onMouseEnterTable = useCallback(() => {
     if (!openEditModal && !openCreateModal) setIsHovered(true);
-  };
-  const onMouseLeaveTable = () => {
+  }, [openCreateModal, openEditModal]);
+
+  const onMouseLeaveTable = useCallback(() => {
     if (!openEditModal && !openCreateModal) setIsHovered(false);
-  };
+  }, [openCreateModal, openEditModal]);
 
   if (isLoading) {
     return (
       <div className={classes.container}>
-        <p className={classes.loading} style={{}}>
-          Loading...
-        </p>
+        <p className={classes.loading}>Loading...</p>
       </div>
     );
   }

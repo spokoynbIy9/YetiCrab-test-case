@@ -1,32 +1,32 @@
 import { Button, Modal, Select, TextInput } from '@gravity-ui/uikit';
-import { FC, useEffect, useState } from 'react';
-import { AttractionDto } from '../../model/types/attractionDto';
+import { FC, useCallback, useState } from 'react';
+import classes from './AttractionCreateModal.module.scss';
 import { Controller, useForm } from 'react-hook-form';
+import { AttractionEditFormSchema } from '../../../../../entities/Attraction/model/types/attractionEditFormSchema';
+import { ImageUpload } from '../../../../../entities/Attraction/ui/ImageUpload/ImageUpload';
 import { Status } from '@/shared/libs/types/status';
-import classes from './AttractionEditModal.module.scss';
-import { useUpdateAttractionMutation } from '../../api/attractionApi';
-import { AttractionEditFormSchema } from '../../model/types/attractionEditFormSchema';
+import { useCreateAttractionMutation } from '../../../../../entities/Attraction/api/attractionApi';
 import { makeMapLink } from '@/shared/libs/helpers/makeMapLink';
-import { ImageUpload } from '../ImageUpload/ImageUpload';
+import { goalOfImageUpload } from '@/shared/libs/const/goalOfImageUpload';
 
-interface AttractionEditModalProps {
+interface AttractionCreateModalProps {
   open: boolean;
   close: () => void;
-  initialValues: AttractionDto | null;
 }
 
-export const AttractionEditModal: FC<AttractionEditModalProps> = ({
+export const AttractionCreateModal: FC<AttractionCreateModalProps> = ({
   open,
   close,
-  initialValues,
 }) => {
   const [uploadImage, setUploadImage] = useState<string | null>(null);
-  const [updateAttraction] = useUpdateAttractionMutation();
+  const [createAttraction] = useCreateAttractionMutation();
+
   const {
-    control,
     reset,
+    control,
     handleSubmit,
     formState: { errors },
+    setError,
   } = useForm<AttractionEditFormSchema>({
     defaultValues: {
       title: '',
@@ -41,33 +41,30 @@ export const AttractionEditModal: FC<AttractionEditModalProps> = ({
     },
   });
 
-  const onSubmitHandler = async (newData: AttractionEditFormSchema) => {
-    try {
-      const resultData = {
-        id: initialValues!.id,
-        ...newData,
-        mapLink: makeMapLink(newData.coordinates),
-      };
-      await updateAttraction(resultData);
-      setUploadImage(null);
-      close();
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
-  useEffect(() => {
-    if (initialValues) {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { id, ...rest } = initialValues;
-      reset(rest);
-    }
-  }, [initialValues, reset]);
+  const onSubmitHandler = useCallback(
+    async (data: AttractionEditFormSchema) => {
+      try {
+        const resultData = {
+          id: crypto.randomUUID(),
+          ...data,
+          mapLink: makeMapLink(data.coordinates),
+        };
+        await createAttraction(resultData);
+        close();
+        setUploadImage(null);
+        reset();
+      } catch (error: unknown) {
+        if (error instanceof Error)
+          setError('root', { type: 'server', message: error?.message });
+      }
+    },
+    [close, createAttraction, reset, setError]
+  );
 
   return (
     <Modal open={open} onOpenChange={close}>
       <div className={classes.modalForm}>
-        <h2>Редактирование</h2>
+        <h2>Создание</h2>
         <form onSubmit={handleSubmit(onSubmitHandler)} className={classes.form}>
           <Controller
             name="title"
@@ -85,6 +82,7 @@ export const AttractionEditModal: FC<AttractionEditModalProps> = ({
           />
 
           <ImageUpload
+            goalImageUpload={goalOfImageUpload.create}
             control={control}
             uploadImage={uploadImage}
             setUploadImage={setUploadImage}
@@ -184,12 +182,10 @@ export const AttractionEditModal: FC<AttractionEditModalProps> = ({
               />
             )}
           />
-          <Button
-            type="submit"
-            view="action"
-            size="l"
-            disabled={Boolean(!initialValues)}
-          >
+          {Boolean(errors.root?.message) && (
+            <span className={classes.serverError}>{errors.root!.message}</span>
+          )}
+          <Button type="submit" view="action" size="l">
             Сохранить
           </Button>
         </form>
