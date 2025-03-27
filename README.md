@@ -41,3 +41,5 @@ npm run server
 ```bash
 npm run build
 ```
+
+## [Документация REST API](API_DOCUMENTATION.md)
